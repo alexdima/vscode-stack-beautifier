@@ -56,6 +56,6 @@ get_sourcemap(COMMIT).then((fileName) => {
         return `at ${replacer(m1, m2, m3)}`;
     });
 
-    fs.writeFileSync('output.txt', result);
+    fs.writeFileSync('output.txt', `Deminified using https://github.com/alexandrudima/vscode-stack-beautifier\n\n${result}`);
     // console.log(result);
 });

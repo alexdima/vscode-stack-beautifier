@@ -1,3 +1,5 @@
+Deminified using https://github.com/alexandrudima/vscode-stack-beautifier
+
 /Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:185
   at onDidChangeConfiguration ([./editor/contrib/codelens/codelensWidget.ts:87:38](https://github.com/Microsoft/vscode/blob/ebe9ea85a0a0bb087dccc98949542605dfc51f6f/src/vs/./editor/contrib/codelens/codelensWidget.ts#L87))
   at [./editor/contrib/codelens/codelensWidget.ts:247:24](https://github.com/Microsoft/vscode/blob/ebe9ea85a0a0bb087dccc98949542605dfc51f6f/src/vs/./editor/contrib/codelens/codelensWidget.ts#L247)
