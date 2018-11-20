@@ -55,10 +55,13 @@ get_sourcemap(COMMIT).then((fileName) => {
     result = result.replace(/at ([^:\[\]]+):(\d+):(\d+)/g, function(_, m1, m2, m3) {
         return `at ${replacer(m1, m2, m3)}`;
     });
+    result = result.replace(/at ([\w_.]+)/g, function(_, m1) {
+        return `at \`${m1}\``;
+    });
 
     result = result.replace(/ /g, '&nbsp;');
-    result = result.replace(/\n/g, '<br/>\n');
+    result = result.replace(/\n/g, '<br/>');
 
-    fs.writeFileSync('output.txt', `Deminified using https://github.com/alexandrudima/vscode-stack-beautifier\n\n${result}`);
+    fs.writeFileSync('output.md', `Deminified using https://github.com/alexandrudima/vscode-stack-beautifier\n\n${result}`);
     // console.log(result);
 });
