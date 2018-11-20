@@ -1,0 +1,11 @@
+{
+  "name": "vscode-stack-beautifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Alex Dima",
+  "dependencies": {
+    "@types/node": "^10.12.9",
+    "stack-beautifier": "^1.0.2"
+  }
+}
