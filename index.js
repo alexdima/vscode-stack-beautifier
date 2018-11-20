@@ -2,6 +2,7 @@ const COMMIT = 'ebe9ea85a0a0bb087dccc98949542605dfc51f6f';
 
 const fs = require('fs');
 const https = require('https');
+const cp = require('child_process');
 
 function https_get_raw_text(options) {
     options.port = 443;
@@ -40,5 +41,21 @@ function get_sourcemap(commit) {
 }
 
 get_sourcemap(COMMIT).then((fileName) => {
-    console.log(fileName);
+    // console.log(fileName);
+    let result = cp.execSync(`node ./node_modules/stack-beautifier/stack-beautifier.js ${fileName} -t input.txt`).toString();
+
+    // console.log(result);
+    const replacer = (filename, line, col) => {
+        return `[${filename}:${line}:${col}](https://github.com/Microsoft/vscode/blob/${COMMIT}/src/vs/${filename}#L${line})`;
+    }
+
+    result = result.replace(/\(([^:\[\]]+):(\d+):(\d+)\)/g, function(_, m1, m2, m3) {
+        return `(${replacer(m1, m2, m3)})`;
+    });
+    result = result.replace(/at ([^:\[\]]+):(\d+):(\d+)/g, function(_, m1, m2, m3) {
+        return `at ${replacer(m1, m2, m3)}`;
+    });
+
+    fs.writeFileSync('output.txt', result);
+    // console.log(result);
 });

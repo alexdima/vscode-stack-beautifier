@@ -1,0 +1,17 @@
+/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:185
+    at new e (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:2037:828)
+    at new e (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:2040:545)
+    at file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:2047:159
+    at file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:1926:480
+    at file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:1926:518
+    at V (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:1916:839)
+    at t._renderOnce (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:1923:831)
+    at t.change (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:1926:254)
+    at t.changeViewZones (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:1949:459)
+    at file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:2046:623
+    at o._changeDecorations (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:1207:185)
+    at o.changeDecorations (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:1206:478)
+    at t.changeDecorations (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:1945:46)
+    at e._renderCodeLensSymbols (file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:2046:583)
+    at file:///Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/workbench/workbench.main.js:2044:884
+    at process._tickCallback (internal/process/next_tick.js:188:7)
