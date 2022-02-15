@@ -1,10 +1,4 @@
-n.charCodeAt is not a function: TypeError: n.charCodeAt is not a function
-   at e.onMessage.e (/Users/vsts/agent/2.155.1/work/1/vscode-reh-darwin/out/vs/server/remoteExtensionHostProcess.js:806:104)
-   at l.fire (/Users/vsts/agent/2.155.1/work/1/vscode-reh-darwin/out/vs/server/remoteExtensionHostProcess.js:50:519)
-   at _.fire (/Users/vsts/agent/2.155.1/work/1/vscode-reh-darwin/out/vs/server/remoteExtensionHostProcess.js:181:274)
-   at t.PersistentProtocol._receiveMessage (/Users/vsts/agent/2.155.1/work/1/vscode-reh-darwin/out/vs/server/remoteExtensionHostProcess.js:185:629)
-   at _socketDisposables.push._socketReader.onMessage.e (/Users/vsts/agent/2.155.1/work/1/vscode-reh-darwin/out/vs/server/remoteExtensionHostProcess.js:182:824)
-   at l.fire (/Users/vsts/agent/2.155.1/work/1/vscode-reh-darwin/out/vs/server/remoteExtensionHostProcess.js:50:519)
-   at p.acceptChunk (/Users/vsts/agent/2.155.1/work/1/vscode-reh-darwin/out/vs/server/remoteExtensionHostProcess.js:178:588)
-   at _register._socket.onData.e (/Users/vsts/agent/2.155.1/work/1/vscode-reh-darwin/out/vs/server/remoteExtensionHostProcess.js:177:958)
-   at Socket.t (/Users/vsts/agent/2.155.1/work/1/vscode-reh-darwin/out/vs/server/remoteExtensionHostProcess.js:187:68)
+TypeError: Cannot read property 'toLowerCase' of undefined
+at i.getLanguageIdByLanguageName (out/vs/workbench/workbench.desktop.main.js:578:102227)
+at c.getLanguageIdByLanguageName (out/vs/workbench/workbench.desktop.main.js:578:103973)
+at out/vs/workbench/workbench.desktop.main.js:1157:1193

@@ -1,6 +1,6 @@
-const COMMIT = '8eaec303ea9b12291540e729ad32b930169e67a4';
-// const SOURCEMAP_REMOTE_PATH = `/sourcemaps/${COMMIT}/core/vs/workbench/workbench.desktop.main.js.map`;
-const SOURCEMAP_REMOTE_PATH = `/sourcemaps/${COMMIT}/core/vs/workbench/services/extensions/node/extensionHostProcess.js.map`;
+const COMMIT = '5554b12acf27056905806867f251c859323ff7e9';
+const SOURCEMAP_REMOTE_PATH = `/sourcemaps/${COMMIT}/core/vs/workbench/workbench.desktop.main.js.map`;
+// const SOURCEMAP_REMOTE_PATH = `/sourcemaps/${COMMIT}/core/vs/workbench/services/extensions/node/extensionHostProcess.js.map`;
 
 const fs = require('fs');
 const path = require('path');
@@ -29,7 +29,7 @@ get_sourcemap().then((fileName) => {
 	result = result.replace(/ /g, '&nbsp;');
 	result = result.replace(/\n/g, '<br/>');
 
-	fs.writeFileSync('output.md', `Deminified using https://github.com/alexandrudima/vscode-stack-beautifier\n\n${result}`);
+	fs.writeFileSync('output.md', `Deminified using https://github.com/alexdima/vscode-stack-beautifier\n\n${result}`);
 	// console.log(result);
 });
 
