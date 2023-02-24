@@ -1,0 +1,8 @@
+Error: Slow Stack
+at b (workbench.desktop.main.js:551:51632)
+at s (workbench.desktop.main.js:553:1244)
+at (anonymous) (workbench.desktop.main.js:552:1343)
+at invoke (workbench.desktop.main.js:86:127)
+at deliver (workbench.desktop.main.js:86:1967)
+at fire (workbench.desktop.main.js:86:1551)
+at ie (workbench.desktop.main.js:84:29612)

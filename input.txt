@@ -1,4 +1,1 @@
-TypeError: Cannot read property 'toLowerCase' of undefined
-at i.getLanguageIdByLanguageName (out/vs/workbench/workbench.desktop.main.js:578:102227)
-at c.getLanguageIdByLanguageName (out/vs/workbench/workbench.desktop.main.js:578:103973)
-at out/vs/workbench/workbench.desktop.main.js:1157:1193
+b#workbench.desktop.main.js:551:51632<s#workbench.desktop.main.js:553:1244<(anonymous)#workbench.desktop.main.js:552:1343<invoke#workbench.desktop.main.js:86:127<deliver#workbench.desktop.main.js:86:1967<fire#workbench.desktop.main.js:86:1551<ie#workbench.desktop.main.js:84:29612

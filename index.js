@@ -1,6 +1,7 @@
-const COMMIT = '5554b12acf27056905806867f251c859323ff7e9';
+const COMMIT = 'e2816fe719a4026ffa1ee0189dc89bdfdbafb164';
 const SOURCEMAP_REMOTE_PATH = `/sourcemaps/${COMMIT}/core/vs/workbench/workbench.desktop.main.js.map`;
 // const SOURCEMAP_REMOTE_PATH = `/sourcemaps/${COMMIT}/core/vs/workbench/services/extensions/node/extensionHostProcess.js.map`;
+// const SOURCEMAP_REMOTE_PATH = `/sourcemaps/${COMMIT}/core/vs/workbench/api/node/extensionHostProcess.js.map`;
 
 const fs = require('fs');
 const path = require('path');
@@ -8,12 +9,28 @@ const https = require('https');
 const cp = require('child_process');
 
 get_sourcemap().then((fileName) => {
-	// console.log(fileName);
-	let result = cp.execSync(`node ./node_modules/stack-beautifier/stack-beautifier.js ${fileName} -t input.txt`).toString();
+
+	const rawinput = fs.readFileSync(path.join(__dirname, 'input.txt')).toString().trim();
+	let inputFilename = 'input.txt';
+	if (/</.test(rawinput)) {
+		console.log(`Identified slow stack format!`);
+		const pieces = rawinput.split(/</g);
+		const result = [`Error: Slow Stack`];
+		for (const piece of pieces) {
+			const pieces2 = piece.split(/#/g);
+			const name = pieces2[0];
+			const location = pieces2[1];
+			result.push(`at ${name} (${location})`);
+		}
+		fs.writeFileSync(path.join(__dirname, 'input2.txt'), result.join('\n'));
+		inputFilename = 'input2.txt';
+	}
+
+	let result = cp.execSync(`node ./node_modules/stack-beautifier/stack-beautifier.js ${fileName} -t ${inputFilename}`).toString();
 
 	// console.log(result);
 	const replacer = (filename, line, col) => {
-		return `[${filename}:${line}:${col}](https://github.com/Microsoft/vscode/blob/${COMMIT}/src/vs/${filename}#L${line})`;
+		return `[\`${filename}:${line}:${col}\`](https://github.com/Microsoft/vscode/blob/${COMMIT}/src/vs/${filename}#L${line})`;
 	}
 
 	result = result.replace(/\(([^:\[\]]+):(\d+):(\d+)\)/g, function (_, m1, m2, m3) {
