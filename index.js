@@ -20,7 +20,14 @@ get_sourcemap().then((fileName) => {
 			const pieces2 = piece.split(/#/g);
 			const name = pieces2[0];
 			const location = pieces2[1];
-			result.push(`at ${name} (${location})`);
+			if (/sandbox_bundle/.test(location) || !location) {
+				continue;
+			}
+			if (name === '(anonymous)') {
+				result.push(`at ${location}`);
+			} else {
+				result.push(`at ${name} (${location})`);
+			}
 		}
 		fs.writeFileSync(path.join(__dirname, 'input2.txt'), result.join('\n'));
 		inputFilename = 'input2.txt';
